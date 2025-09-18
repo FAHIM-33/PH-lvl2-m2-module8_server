@@ -9,4 +9,4 @@ const studentSchema = new Schema<IStudent>({
   hobbies: { type: [String] },
 });
 
-const Student = model<IStudent>("Student", studentSchema);
+export const Student = model<IStudent>("Student", studentSchema);

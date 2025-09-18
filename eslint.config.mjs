@@ -5,8 +5,11 @@ import { defineConfig } from "eslint/config";
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 export default defineConfig([
+   {
+    ignores: ["node_modules/**", "dist/**", "eslint.config.mjs"], // 👈 move here
+  },
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
+       files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
     plugins: { js },
     rules: {
       // eqeqeq: "off",
@@ -14,13 +17,9 @@ export default defineConfig([
       "prefer-const": ["error", { ignoreReadBeforeAssign: true }],
       "no-unused-expressions": ["error", { ignoreReadBeforeAssign: true }],
       "no-undef": ["error"],
-      "no-console": ["warn"],
-      
+      "no-console": ["warn"],      
     },
-    // globals: {
-    //   "process":"readonly"
-    // },
-    ignores: [".node_modules/*","./dist/*"],
+   
     extends: ["js/recommended"],
     languageOptions: { globals: globals.browser }
   },

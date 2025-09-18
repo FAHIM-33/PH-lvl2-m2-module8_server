@@ -1,5 +1,3 @@
-import { model } from "mongoose";
-
 export interface IStudent {
   name: string;
   email: string;
